@@ -1,0 +1,23 @@
+#!/bin/bash
+TEST_DIVISOR_1=3
+TEST_DIVISOR_2=5
+UPPER_LIMIT=100
+
+i=1
+while [ $i -lt $(($UPPER_LIMIT+1)) ];
+do
+printed_text=0
+if [ $(($i%$TEST_DIVISOR_1)) -eq 0 ]; then
+echo -n "Fizz"
+printed_text=1
+fi
+if [ $(($i%$TEST_DIVISOR_2)) -eq 0 ]; then
+echo -n "Buzz"
+printed_text=1
+fi
+if [ $printed_text -eq 0 ]; then
+echo -n $i
+fi
+echo ""
+i=$(($i+1))
+done
