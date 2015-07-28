@@ -1,0 +1,6 @@
+for i = 1 to 100
+a$ = ""
+IF i mod 3 = 0 THEN a$ = a$+"Fizz"
+IF i mod 5 = 0 THEN a$ = a$+"Buzz"
+IF a$="" THEN print i ELSE print a$
+next i
