@@ -1,0 +1,11 @@
+(defn mod-by-features [x features]                                               
+  (reduce str                                                                    
+    (map #(let [[feature value] %]                                               
+      (when (zero? (mod x feature)) value)) features)))                          
+                                                                                    
+(defn fizzbuzz-v2 [start end features]                                            
+  (map #(let [result (mod-by-features % features)]                                
+    (if (empty? result) % result)) (range start end)))
+
+(defn -main [& args]                                                              
+  (fizzbuzz-v2 1 101 (sorted-map 3 "fizz" 5 "buzz" 7 "bang")))
